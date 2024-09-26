@@ -1,0 +1,27 @@
+//FIBONACCI SERIES USING RECURSION
+#include<stdio.h>
+int fib(int n){
+    if(n == 0){
+        return 0;
+    }
+    else if(n==1){
+        return 1;
+    }
+    else
+    return (fib(n-1)+fib(n-2));
+}
+int main(){
+    int n;
+    printf("ENTER THE NUMBERS OF TERM:\n");
+    scanf("%d",&n);
+    printf("FIBONACCI SERIES:\n");
+    for(int i=0;i<n;i++){
+        printf("%d",fib(i));
+    }
+}
+OUTPUT:
+ENTER THE NUMBERS OF TERM:
+4
+FIBONACCI SERIES:
+0112
+
