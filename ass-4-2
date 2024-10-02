@@ -1,0 +1,26 @@
+// C++ program to implement the concept of function overloading using a class which will have functions to calculate the area of a square, circle and rectangle individually
+#include<iostream>
+using namespace std;
+class shape{
+public:
+    float area(float a){
+    return (a*a);
+    }
+    float area(float a,float b,float c){
+    return (0.5*a*b);
+    }
+    float area(float r,float n){
+    return (3.14*r*r);
+    }
+    };
+    int main(){
+    shape M1;
+
+    cout<<"Area of square: "<<M1.area(5);
+    cout<<"\nArea of rectangle: "<<M1.area(5,6,0);
+    cout<<"\nArea of circle: "<<M1.area(4,0);
+    }
+OUTPUT:
+Area of square: 25
+Area of rectangle: 15
+Area of circle: 50.24
