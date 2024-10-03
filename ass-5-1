@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class MyClass {
+private:
+    string name;
+    int age;
+
+public:
+    // Default constructor
+    MyClass() : name("Default Name"), age(0) {
+        cout << "Default Constructor called." << endl;
+    }
+
+    // Parameterized constructor
+    MyClass(const string& initName, int initAge) : name(initName), age(initAge) {
+        cout << "Parameterized Constructor called." << endl;
+    }
+
+    // Copy constructor
+    MyClass(const MyClass& other) : name(other.name), age(other.age) {
+        cout << "Copy Constructor called." << endl;
+    }
+
+    // Constructor with default arguments
+    MyClass(const string& initName = "Default Name", int initAge = 0) : name(initName), age(initAge) {
+        cout << "Constructor with Default Arguments called." << endl;
+    }
+
+    // Destructor
+    ~MyClass() {
+        cout << "Destructor called for " << name << endl;
+    }
+
+    // Method to display information
+    void display() const {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+};
+
+int main() {
+    // Using the default constructor
+    MyClass obj1;
+    obj1.display();
+
+    // Using the parameterized constructor
+    MyClass obj2("Alice", 30);
+    obj2.display();
+
+    // Using the copy constructor
+    MyClass obj3(obj2);
+    obj3.display();
+
+    // Using the constructor with default arguments
+    MyClass obj4("Bob");
+    obj4.display();
+
+    MyClass obj5;  // Using the default constructor
+    obj5.display();
+
+    return 0;
+}
